@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a18fa9a70e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/sign_up.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="body">
+
+        <div class="container form">
+
+            <form action="/users/create" method="post">
+
+                <input type="text" name="name" placeholder="your name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                <select name="userType" id="usertype">
+                    <option value="Premium">Premium</option>
+                    <option value="Non-Premium">Non-Premium</option>
+                    <option value="Super-User">Super-User</option>
+                </select>
+                <input type="submit" id="btn" value="Sign Up">
+
+
+                <a href="/users/sign-in">signIn</a>
+            </form>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+.section {
+    display: flex;
+    justify-content: center;
+}
+
+.req-list {
+    background-color: aquamarine;
+    width: 50%;
+
+}
+
+table {
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 1%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 1%;
+}

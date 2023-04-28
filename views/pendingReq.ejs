@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/pending.css">
+</head>
+
+<body>
+    <h1>pending</h1>
+
+    <div class="section">
+
+        <% if(requests.length===0) {%>
+            <%= message %>
+                <%}else{%>
+
+                    <div class="req-list">
+
+                        <table>
+                            <tr>
+                                <th>
+                                    Date
+                                </th>
+                                <th>
+                                    Amount
+                                </th>
+                                <th>
+                                    Requested By
+                                </th>
+                                <th>
+                                    status
+                                </th>
+                                <th>
+                                    Action
+                                </th>
+                            </tr>
+                            <% for(let request of requests) {%>
+                                <tr>
+                                    <td>
+                                        date
+                                    </td>
+                                    <td>
+                                        <%= request.amount %>
+                                    </td>
+                                    <td>
+                                        <%= request.from.name %>
+                                    </td>
+                                    <td>
+                                        <%= request.status %>
+                                    </td>
+                                    <td>
+                                        <%if(request.status==='pending' ) {%>
+                                            <a href="/users/accept/?id=<%= request.id %>">Accept</a>
+                                            <a href="/users/reject?id=<%= request.id %>">Reject</a>
+                                            <%} else if(request.status==='accepted' ){%>
+                                                <h2>Accepted</h2>
+                                                <%} else if(request.status==='rejected' ){%>
+                                                    <h2>Rejected</h2>
+                                                    <%}%>
+                                    </td>
+
+                                </tr>
+                                <%}}%>
+                        </table>
+                    </div>
+
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>

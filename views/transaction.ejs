@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/transaction.css">
+</head>
+
+<body>
+    <h1>Transaction</h1>
+
+    <h1>
+        <%= user.name %>
+    </h1>
+    <div class="main">
+        <% for (let transaction of transactions) { %>
+
+            <% if(user._id===transaction.sender._id ){%>
+                <div class="transaction-bar">
+
+                    <%= transaction.date.toLocaleString('en-US', { weekday: 'short' , year: 'numeric' , month: 'short' ,
+                        day: 'numeric' , hour: 'numeric' , minute: 'numeric' }) %>
+                        : <%= transaction.sender.name %> sent <%= transaction.amount %> to <%= transaction.receiver.name
+                                    %>
+                </div>
+
+                <%}else {%>
+                    <div class="transaction-bar">
+                        <%= transaction.date.toLocaleString('en-US', { weekday: 'short' , year: 'numeric' ,
+                            month: 'short' , day: 'numeric' , hour: 'numeric' , minute: 'numeric' }) %>
+                            : <%= transaction.amount %> recived from <%= transaction.sender.name %>
+
+                                    <%}%>
+                    </div>
+                    <% } %>
+    </div>
+</body>
+
+</html>

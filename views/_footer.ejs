@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <footer>
+        <div class="foot container">
+            <div class="left">
+                <div class="flogo">
+
+                </div>
+                <a href="">About</a>
+                <a href="https://github.com/raj0811/taskmanagernodejs">Source Code</a>
+            </div>
+
+            <div class="left">
+                <% if(locals.user){ %>
+                    <li>
+                      <a href="/users/profile"> <%= user.name %></a>
+    
+                    </li>
+                    <li><a href="/users/sign-out">Sign-out</a></li>
+                    <% } else { %>
+                        <li class="signin-h"><a href="/users/sign-in">sign-in</a></li>
+                        <li class="signup-h"><a href="/users/sign-up">sign-up</a></li>
+                    <% } %>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

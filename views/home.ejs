@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    <h1 class="head" style="text-align: center; margin-top: 2%;">Virtual Wallet</h1>
+    <div class="main-c ">
+        <% if(locals.user) {%>
+            <h1>Hi <%= user.name %>
+            </h1>
+
+
+
+
+    </div>
+
+    <div class="section">
+
+
+        <div class="bar">
+            <h2>Hi <%= user.name %>
+            </h2>
+            <h2>You Are a <%= user.userType %> User</h2>
+            <h2>Wallet Balance: <%= user.walletBalance %>
+            </h2>
+        </div>
+
+        <div class="redirect-links">
+
+            <ul>
+                <li><a href="#">Wallet</a></li>
+                <li><a href="/users/sendmoney">Send Money</a></li>
+                <li><a href="/users/requestpage">Request Money</a></li>
+                <li><a href="/users/pending">Request Received</a></li>
+                <li><a href="/users/sign-out">Sign Out</a></li>
+                <li><a href="/users/transaction">Transaction</a></li>
+            </ul>
+
+
+        </div>
+    </div>
+
+
+
+
+    <%} else{%>
+
+        <div class="login-div">
+            <div class="login-msg">
+                <h1>Please Login to Perform any Actions</h1>
+                <li class="signin-h"><a href="/users/sign-in">sign-in</a></li>
+                <li class="signup-h"><a href="/users/sign-up">sign-up</a></li>
+
+            </div>
+        </div>
+        <%}%>
+
+</body>
+
+</html>

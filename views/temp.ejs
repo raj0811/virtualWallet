@@ -1,0 +1,62 @@
+<% for(task of tasks) {%>
+          
+    <% if(locals.user && locals.user.id==task.user._id) {%>
+
+        <div class="taskbar">
+            <div class="title">
+                <h1>
+                    <%= task.title %>
+                </h1>
+            </div>
+            <div class="desc">
+                <div class="task-details">
+                    <%= task.description %>
+                </div>
+                <div class="action-btn">
+                    <a href="#" onclick="openEditModal()"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="/tasks/destroy/<%= task._id %>"> <i class="fa-solid fa-trash"></i></a>
+
+                </div>
+            </div>
+            <div id="editModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeEditModal()">&times;</span>
+                    <form action="/tasks/update/<%= task._id %>" method="post">
+                        <input type="text" name="newtitle" value=" <%= task.title %>" placeholder="New Title">
+                        <textarea name="new_task_details" id="" cols="30"
+                            rows="10"><%= task.description %></textarea>
+                        <input type="submit" id="btn" value="Edit">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <a href="">
+            <img src="https://cdn-icons-png.flaticon.com/512/400/400425.png" alt="video" height="50px" width="70px">
+        </a>
+
+        <%}%>
+    <%}%>
+
+
+
+
+
+
+
+    <script>
+        function openEditModal() {
+            document.getElementById("editModal").style.display = "block";
+        }
+
+        function closeEditModal() {
+            document.getElementById("editModal").style.display = "none";
+        }
+
+    </script>
+
+
+
+
+
+

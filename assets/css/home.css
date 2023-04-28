@@ -1,0 +1,41 @@
+body {
+    background-image: radial-gradient(circle 993px at 0.5% 50.5%, rgba(137, 171, 245, 0.37) 0%, rgba(245, 247, 252, 1) 100.2%);
+    /* background: fixed; */
+}
+
+
+.main-c {
+    /* background-color: aquamarine; */
+    width: 100%;
+    margin-left: 3%;
+    display: flex;
+    /* justify-content: space-evenly; */
+    margin-top: 2%;
+}
+
+.login-div {
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.login-msg li a {
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.redirect-links {
+    /* margin-left: 3%; */
+    margin-top: 2%;
+}
+
+.redirect-links li a {
+    /* background-color: aquamarine; */
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.section {
+    margin-left: 3%;
+}

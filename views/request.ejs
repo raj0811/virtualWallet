@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/request.css">
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div class="section">
+
+
+            <div class="bar">
+                <h2>Hi <%= user.name %> You can request Money Here </h2>
+
+            </div>
+
+            <div class="request-money">
+                <h1>
+                    <%= user.name %>
+                </h1>
+                <form action="/users/requestmoney" method="post">
+                    <input type="email" name="email" placeholder="Enter email address of payeer " id="">
+                    <input type="number" name="amount" placeholder="Enter Amount" id="">
+                    <input type="submit" value="Request Money">
+                </form>
+            </div>
+            <div class="redirect-links">
+
+                <ul>
+                    <li><a href="#">Wallet</a></li>
+                    <li><a href="#">Send Money</a></li>
+
+                    <li><a href="/users/pending">Request Received</a></li>
+                    <li><a href="/users/sign-out">Sign Out</a></li>
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
