@@ -28,5 +28,5 @@ router.get('/reject', usersController.reject)
 router.get('/transaction', usersController.renderTransaction)
 router.get('/sendmoney', usersController.rendersendmoney)
 router.post('/send', usersController.sendmoney)
-router.get('/wallet', usersController.wallet)
+router.get('/wallet', passport.checkAuthentication, usersController.wallet)
 module.exports = router;

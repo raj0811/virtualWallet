@@ -13,24 +13,25 @@
 
     <h1>
         <%= user.name %>
+
     </h1>
     <div class="main">
+
         <% for (let transaction of transactions) { %>
 
-            <% if(user._id===transaction.sender._id ){%>
+            <% if(user._id.toString()===transaction.sender._id.toString()){%>
                 <div class="transaction-bar">
 
                     <%= transaction.date.toLocaleString('en-US', { weekday: 'short' , year: 'numeric' , month: 'short' ,
                         day: 'numeric' , hour: 'numeric' , minute: 'numeric' }) %>
-                        : <%= transaction.sender.name %> sent <%= transaction.amount %> to <%= transaction.receiver.name
-                                    %>
+                        : sent Rs <%= transaction.amount %> to <%= transaction.receiver.name %>
                 </div>
 
                 <%}else {%>
                     <div class="transaction-bar">
                         <%= transaction.date.toLocaleString('en-US', { weekday: 'short' , year: 'numeric' ,
                             month: 'short' , day: 'numeric' , hour: 'numeric' , minute: 'numeric' }) %>
-                            : <%= transaction.amount %> recived from <%= transaction.sender.name %>
+                            : <%= transaction.amount %> Recive From <%= transaction.sender.name %>
 
                                     <%}%>
                     </div>
