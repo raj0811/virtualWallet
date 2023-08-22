@@ -1,0 +1,52 @@
+.main{
+    display: flex;
+    justify-content: center;
+}
+.sub{
+    width: 90%;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    /* background-color: aquamarine; */
+    height: 40vh;
+    padding: 1%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.input input{
+    height: 5vh;
+    width: 70%;
+    font-size: 1.5rem;
+}
+.pre{
+    display: flex;
+    width: 70%;
+    height: 5vh;
+    justify-content: space-evenly;
+}
+.pre button{
+    width: 15%;
+    font-size: 1.5rem;
+    border: none;
+    color: wheat;
+    font-weight: bold;
+    background-image: radial-gradient( circle 897px at 9% 80.3%,  rgba(55,60,245,1) 0%, rgba(234,161,15,0.90) 100.2% );
+}
+#razorpayButton{
+    width: 70%;
+    height: 6vh;
+    font-size: 2rem;
+    border-radius: 20px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(176,229,208,1) 42%, rgba(92,202,238,0.41) 93.6% );
+    transition: 1s;
+}
+#razorpayButton:active{
+    width: 60%;
+    height: 4vh;
+    font-size: 1.2rem;
+}

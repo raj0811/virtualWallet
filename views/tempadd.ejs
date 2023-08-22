@@ -1,0 +1,75 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/add.css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="sub">
+            <h1>Hey <%=user.name%></h1>
+            <h2>Your wallet balance is  <%=user.walletBalance%></h2>
+            <h1>Add Amount to Wallet</h1>
+            <div class="input">
+                <input type="number" id="amt" placeholder="Amount">
+                <h2>Quick select</h2>
+                <div class="pre">
+                    <button  class="ammt" onclick="setAmt(100)">100</button>
+                    <button  class="" onclick="setAmt(500)">500</button>
+                    <button  class="" onclick="setAmt(1000)">1000</button>
+                    <button  class="" onclick="setAmt(5000)">5000</button>
+                </div>
+                <button id="razorpayButton">Pay Now</button>
+            </div>
+            <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        </div>
+        
+    </div>
+
+    <script>
+        const setAmt = (amount) => {
+        document.getElementById("amt").value = amount;
+    };
+    </script>
+    <script>
+        document.getElementById('razorpayButton').addEventListener('click', () => {
+          // Calculate the dynamic amount (e.g., product cost) - replace with your logic
+          const amt = document.getElementById("amt").value * 1
+          const productCost = 169; // Replace with your product cost calculation
+          
+          // Create payment options
+          const options = {
+            key: 'rzp_test_EKuGtEbTppcZBh',
+            amount: amt * 100, // Amount in paise (Rupees * 100)
+            currency: 'INR',
+            name: 'Virtual Wallet',
+            description: 'Add in wallet',
+            image: 'https://cdn-icons-png.flaticon.com/128/1796/1796874.png',
+            handler: function(response) {
+              // Handle the payment response here
+              console.log(response);
+              
+              // Redirect to the specified URL after successful payment
+              if (response.razorpay_payment_id) {
+                window.location.href = `http://16.170.239.111:8012/user?amt=${amt}`;
+              }
+            },
+            // Redirect URL after payment success
+            redirect: {
+              success: `http://16.170.239.111:8012/user?amt=${amt}`,
+            },
+          };
+        
+          // Initialize the Razorpay payment
+          const rzp = new Razorpay(options);
+          rzp.open();
+        });
+    </script>
+        
+        
+</body>
+</html>

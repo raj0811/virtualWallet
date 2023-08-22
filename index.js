@@ -36,6 +36,7 @@ app.use(session({
     store: MongoStore.create({
 
         mongoUrl: 'mongodb+srv://mrunknown0086:GO5dV7jPxrBttQ43@cluster0.txtaext.mongodb.net/?retryWrites=true&w=majority',
+        // mongoUrl: 'mongodb://localhost/virtual_wallet_db',
         autoRemove: 'disabled'
 
     },

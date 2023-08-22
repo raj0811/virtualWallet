@@ -1,2 +1,28 @@
 node_modules/
- 
+ <script>
+        var options = {
+            "key": "rzp_test_EKuGtEbTppcZBh",
+            "amount": <%= order.amount_due %>,
+            "currency": "INR",
+            "name": "Your Company Name",
+            "description": "Payment for order",
+            "order_id": "<%= order.id %>",
+            "handler": function (response){
+                document.getElementById('payment_id').value = response.razorpay_payment_id;
+                document.getElementById('signature').value = response.razorpay_signature;
+                document.querySelector('form').submit(); // Submit the form to your server
+            },
+            "prefill": {
+                "name": "John Doe",
+                "email": "john@example.com",
+                "contact": "9876543210"
+            },
+            "notes": {
+                "userId": "user123" // Replace with actual user ID
+            },
+            "theme": {
+                "color": "#F37254"
+            }
+        };
+        order = razorpay_client.order.create(data=data)
+    </script>

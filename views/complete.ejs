@@ -1,0 +1,25 @@
+<!-- views/payment.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment</title>
+</head>
+<body>
+    <h1>Complete Payment</h1>
+    <form action="/verifyPayment" method="post">
+        <input type="hidden" name="razorpay_order_id" value="<%= order.id %>">
+        <input type="hidden" name="razorpay_payment_id" id="payment_id">
+        <input type="hidden" name="razorpay_signature" id="signature">
+        <script src="https://checkout.razorpay.com/v1/checkout.js"
+                data-key="<%= order.key_id %>"
+                data-amount="<%= order.amount %>"
+                data-currency="<%= order.currency %>"
+                data-name="E-Wallet"
+                data-description="Add Money to Wallet"
+                data-image="https://your_logo_url.png"
+                data-order_id="<%= order.id %>"
+                data-redirect-url="/success">
+        </script>
+    </form>
+</body>
+</html>

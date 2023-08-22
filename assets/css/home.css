@@ -28,12 +28,50 @@ body {
 .redirect-links {
     /* margin-left: 3%; */
     margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.redirect-links ul{
+    display: flex;
+    background-color: aquamarine;
+    width: 70%;
+    height: 60vh;
+    padding: 1%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
 }
 
+.redirect-links li{
+    /* border: 1px solid black; */
+    height: 40%;
+    width: 18%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5%;
+   
+}
 .redirect-links li a {
     /* background-color: aquamarine; */
     text-decoration: none;
     font-size: 2rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    transition: 1s;
+}
+.redirect-links li a:hover{
+    height: 80%;
+    width: 80%;
+}
+.redirect-links li a img{
+    height: 80%;
+    width: 90%;
 }
 
 .section {
